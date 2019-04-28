@@ -14,7 +14,6 @@ namespace UnitTesting
         Node<string> link1;
         Node<string> link2;
         Node<string> link3;
-        Node<string> link4;
 
         [SetUp]
         public void Setup()
