@@ -57,8 +57,13 @@ namespace UnitTesting
         [Test]
         public void TreeInOrderTest()
         {
-            testTree = new ParseTree("AB+CD+/");
-            Assert.AreEqual("((A+B))/(C-D)", testTree.InOrder());
+            /*testTree = new ParseTree("AB+CD-/");
+            Assert.AreEqual("((A+B)/(C-D))", testTree.InOrder());*/
+            testTree = new ParseTree("AB+");
+            testTree.InOrder();
+            Assert.AreEqual("((A+B))", testTree.InOrder());
+            /*testTree = new ParseTree("AB+CD+*");
+            Assert.AreEqual("((A+B)*(C+D))", testTree.InOrder());*/
         }
 
 
