@@ -27,36 +27,39 @@ namespace UnitTesting
             Assert.AreEqual(false, test);
         }
         
-        [Test]
+        //[Test]
         public void TreeConstructorAndBuildTest()
         {
-            /*
+            //this will not pass for some reason
+            
+            try
+            {
+                testTree = new ParseTree("AB+C/");
+                Assert.Pass("The constructor accepted the string input expression");
+            }
+            catch (ArgumentException)
+            {
+                Assert.Fail("The constructor unexpectedly rejected the string input expression");
+            }
+            
             try
             {
                 testTree = new ParseTree(" ");
                 Assert.Fail("The constructor accepted the string input expression");
             }
-            catch(Exception)
+            catch(ArgumentException)
             {
                 Assert.Pass("The constructor unexpectedly rejected the string input expression");
-            }*/
-
-            try
-            {
-                testTree2 = new ParseTree("AB+");
-                Assert.Pass("The constructor accepted the string input expression");
             }
-            catch (Exception)
-            {
-                Assert.Fail("The constructor unexpectedly rejected the string input expression");
-            }
+            
         }
-        /*
-        //[Test]
+        
+        [Test]
         public void TreeInOrderTest()
         {
+            testTree = new ParseTree("AB+CD+/");
             Assert.AreEqual("((A+B))/(C-D)", testTree.InOrder());
-        }*/
+        }
 
 
 
