@@ -4,3 +4,9 @@ E:\Random (HDD)\LCC CS\gitHubRepo\CS260\CS260Lab4\CS260Lab4\BinaryParseTree\Bina
 E:\Random (HDD)\LCC CS\gitHubRepo\CS260\CS260Lab4\CS260Lab4\BinaryParseTree\BinaryParseTree\obj\Debug\BinaryParseTree.csproj.CoreCompileInputs.cache
 E:\Random (HDD)\LCC CS\gitHubRepo\CS260\CS260Lab4\CS260Lab4\BinaryParseTree\BinaryParseTree\obj\Debug\BinaryParseTree.dll
 E:\Random (HDD)\LCC CS\gitHubRepo\CS260\CS260Lab4\CS260Lab4\BinaryParseTree\BinaryParseTree\obj\Debug\BinaryParseTree.pdb
+D:\Random\LCC\CS260\Lab4\lab4Updated\BinaryParseTree\BinaryParseTree\bin\Debug\BinaryParseTree.dll
+D:\Random\LCC\CS260\Lab4\lab4Updated\BinaryParseTree\BinaryParseTree\bin\Debug\BinaryParseTree.pdb
+D:\Random\LCC\CS260\Lab4\lab4Updated\BinaryParseTree\BinaryParseTree\obj\Debug\BinaryParseTree.csprojAssemblyReference.cache
+D:\Random\LCC\CS260\Lab4\lab4Updated\BinaryParseTree\BinaryParseTree\obj\Debug\BinaryParseTree.csproj.CoreCompileInputs.cache
+D:\Random\LCC\CS260\Lab4\lab4Updated\BinaryParseTree\BinaryParseTree\obj\Debug\BinaryParseTree.dll
+D:\Random\LCC\CS260\Lab4\lab4Updated\BinaryParseTree\BinaryParseTree\obj\Debug\BinaryParseTree.pdb

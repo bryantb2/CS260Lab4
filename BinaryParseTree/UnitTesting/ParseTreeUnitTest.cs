@@ -12,7 +12,6 @@ namespace UnitTesting
     class ParseTreeUnitTest
     {
         ParseTree testTree;
-        ParseTree testTree2;
 
         //[SetUp]
         public void Setup()
@@ -57,14 +56,29 @@ namespace UnitTesting
         [Test]
         public void TreeInOrderTest()
         {
-            /*testTree = new ParseTree("AB+CD-/");
-            Assert.AreEqual("((A+B)/(C-D))", testTree.InOrder());*/
+            testTree = new ParseTree("AB+CD-/");
+            Assert.AreEqual("((A+B)/(C-D))", testTree.InOrder());
             testTree = new ParseTree("AB+");
             testTree.InOrder();
-            Assert.AreEqual("((A+B))", testTree.InOrder());
-            /*testTree = new ParseTree("AB+CD+*");
-            Assert.AreEqual("((A+B)*(C+D))", testTree.InOrder());*/
+            Assert.AreEqual("(A+B)", testTree.InOrder());
+            testTree = new ParseTree("AB+CD+*");
+            Assert.AreEqual("((A+B)*(C+D))", testTree.InOrder());
         }
+
+        [Test]
+        public void TreePostOrderTest()
+        {
+            testTree = new ParseTree("AB+CD-/");
+            Assert.AreEqual("AB+CD-/", testTree.PostOrder());
+            testTree = new ParseTree("AB+");
+            testTree.PostOrder();
+            Assert.AreEqual("AB+", testTree.PostOrder());
+            testTree = new ParseTree("AB+CD+*");
+            Assert.AreEqual("AB+CD+*", testTree.PostOrder());
+        }
+
+
+
 
 
 

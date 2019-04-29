@@ -10,3 +10,15 @@ E:\Random (HDD)\LCC CS\gitHubRepo\CS260\CS260Lab4\CS260Lab4\BinaryParseTree\Unit
 E:\Random (HDD)\LCC CS\gitHubRepo\CS260\CS260Lab4\CS260Lab4\BinaryParseTree\UnitTesting\obj\Debug\UnitTesting.csproj.CopyComplete
 E:\Random (HDD)\LCC CS\gitHubRepo\CS260\CS260Lab4\CS260Lab4\BinaryParseTree\UnitTesting\obj\Debug\UnitTesting.dll
 E:\Random (HDD)\LCC CS\gitHubRepo\CS260\CS260Lab4\CS260Lab4\BinaryParseTree\UnitTesting\obj\Debug\UnitTesting.pdb
+D:\Random\LCC\CS260\Lab4\lab4Updated\BinaryParseTree\UnitTesting\obj\Debug\UnitTesting.csprojAssemblyReference.cache
+D:\Random\LCC\CS260\Lab4\lab4Updated\BinaryParseTree\UnitTesting\obj\Debug\UnitTesting.csproj.CoreCompileInputs.cache
+D:\Random\LCC\CS260\Lab4\lab4Updated\BinaryParseTree\UnitTesting\obj\Debug\UnitTesting.dll
+D:\Random\LCC\CS260\Lab4\lab4Updated\BinaryParseTree\UnitTesting\obj\Debug\UnitTesting.pdb
+D:\Random\LCC\CS260\Lab4\lab4Updated\BinaryParseTree\UnitTesting\bin\Debug\UnitTesting.dll
+D:\Random\LCC\CS260\Lab4\lab4Updated\BinaryParseTree\UnitTesting\bin\Debug\UnitTesting.pdb
+D:\Random\LCC\CS260\Lab4\lab4Updated\BinaryParseTree\UnitTesting\bin\Debug\BinaryParseTree.dll
+D:\Random\LCC\CS260\Lab4\lab4Updated\BinaryParseTree\UnitTesting\bin\Debug\nunit.framework.dll
+D:\Random\LCC\CS260\Lab4\lab4Updated\BinaryParseTree\UnitTesting\bin\Debug\BinaryParseTree.pdb
+D:\Random\LCC\CS260\Lab4\lab4Updated\BinaryParseTree\UnitTesting\bin\Debug\nunit.framework.pdb
+D:\Random\LCC\CS260\Lab4\lab4Updated\BinaryParseTree\UnitTesting\bin\Debug\nunit.framework.xml
+D:\Random\LCC\CS260\Lab4\lab4Updated\BinaryParseTree\UnitTesting\obj\Debug\UnitTesting.csproj.CopyComplete

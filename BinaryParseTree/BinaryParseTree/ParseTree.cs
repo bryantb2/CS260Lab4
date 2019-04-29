@@ -134,6 +134,11 @@ namespace BinaryParseTree
 
         public string PreOrder()
         {
+            return PreOrderCalc(root);
+        }
+
+        private string PreOrderCalc(Node<char> currentNode)
+        {
             //create a recursive function that add a node for each value in the expression
             //create an index and set to zero
             //test to see if expression is empty and if current value is a space, if not then continue
@@ -143,18 +148,74 @@ namespace BinaryParseTree
             //make the second node's value equal the current substring
             //then call this function and increment the index
             //else if the current substring equals one of the operators
-            //
-            return "";
+            if (currentNode == null)
+            {
+                return "";
+            }
+            string buffer = "";
+            buffer += currentNode.Value;
+            buffer += PreOrderCalc(currentNode.Left);
+            buffer += PreOrderCalc(currentNode.Right);
+            return buffer;
         }
 
         public string InOrder()
         {
+            return InOrderCalc(root);
+        }
+
+        private string InOrderCalc(Node<char> currentNode)
+        {
+            if (currentNode == null)
+            {
+                return "";
+            }
+            string buffer = "";
+            if(currentNode.Left != null)
+            {
+                buffer += "(";
+                buffer += InOrderCalc(currentNode.Left);
+            }
+            buffer += currentNode.Value;
+            if(currentNode.Right != null)
+            {
+                buffer += InOrderCalc(currentNode.Right);
+                buffer += ")";
+            }
+            return buffer;
+        }
+
+        public string PostOrder()
+        {
+            return PostOrderCalc(root);
+        }
+
+        private string PostOrderCalc(Node<char> currentNode)
+        {
+            if (currentNode == null)
+            {
+                return "";
+            }
+            string buffer = "";
+            if (currentNode.Left != null)
+            {
+                buffer += PostOrderCalc(currentNode.Left);
+            }
+            if (currentNode.Right != null)
+            {
+                buffer += PostOrderCalc(currentNode.Right);
+            }
+            buffer += currentNode.Value;
+            return buffer;
+        }
+
+        //JUNK
+        /*
             //declare a currentNode and output string variable
             Node<char> currentNode = root;
             string output = "";
             bool nowOnRight = false;
-            //walk through to the leaf furthest on the left portion of the tree that is an oeprator
-            //set the leaf to current node
+            //walk through to the leaf furthest on the left portion of the tree that is an operator
             while ((currentNode.Left.Value == tokens[0] || currentNode.Left.Value == tokens[1] || currentNode.Left.Value == tokens[2] || currentNode.Left.Value == tokens[3]))
             {
                 currentNode = currentNode.Left;
@@ -164,9 +225,18 @@ namespace BinaryParseTree
             {
                 //use a while loop under the condition that the currentNode is not null
 
+                //if the current node is the root
+                //print the root and set current node to right
+                if (currentNode == root)
+                {
+                    output += currentNode.Value;
+                    currentNode = currentNode.Right;
+                    nowOnRight = true;
+                }
+
                 //if current node value is op and has no operator children (to the left of parent)
-                    //print its left child, itself, then its right child
-                    //set current node to the parent
+                //print its left child, itself, then its right child
+                //set current node to the parent
                 if ((currentNode.Value == tokens[0] || currentNode.Value == tokens[1] || currentNode.Value == tokens[2] || currentNode.Value == tokens[3]) && (currentNode != root) && nowOnRight != true
                 && (currentNode.Right.Value != tokens[0] || currentNode.Right.Value != tokens[1] || currentNode.Right.Value != tokens[2] || currentNode.Right.Value != tokens[3]) &&
                 (currentNode.Left.Value != tokens[0] || currentNode.Left.Value != tokens[1] || currentNode.Left.Value != tokens[2] || currentNode.Left.Value != tokens[3]))
@@ -176,7 +246,7 @@ namespace BinaryParseTree
                     output += currentNode.Value;
                     output += currentNode.Right.Value;
                     output += ")";
-                    if(expression.Length == 3)
+                    if (expression.Length == 3)
                     {
                         currentNode = null;
                     }
@@ -185,16 +255,6 @@ namespace BinaryParseTree
                         currentNode = currentNode.Parent;
                     }
                 }
-
-                //if the current node is the root
-                //print the root and set current node to right
-                else if (currentNode == root)
-                {
-                    output += currentNode.Value;
-                    currentNode = currentNode.Right;
-                    nowOnRight = true;
-                }
-
                 /*
                 //if the current node is an op and has a non-op left child
                     //print the left child and then itself
@@ -229,62 +289,49 @@ namespace BinaryParseTree
                     currentNode = currentNode.Right;
                 }*/
 
-                
-                 //if current node value is op, has no operator children, and is to the right of the parent
-                    //print its left child, itself, then its right child
-                    //TEST TO SEE IF ON THE RIGHT SIDE OF ROOT
-                    //use while loop to find current node
-                    //if current node equals the iter
-                    //set current node to null
-                //otherwise
-                    //set the current node to the grandparent (meaning that the parsing process is not over)
-                    //use while loop to find current node
-                else if ((currentNode.Value == tokens[0] || currentNode.Value == tokens[1] || currentNode.Value == tokens[2] || currentNode.Value == tokens[3]) && (currentNode.Parent.Right == currentNode)
-                && (currentNode.Right.Value != tokens[0] || currentNode.Right.Value != tokens[1] || currentNode.Right.Value != tokens[2] || currentNode.Right.Value != tokens[3]) &&
-                (currentNode.Left.Value != tokens[0] || currentNode.Left.Value != tokens[1] || currentNode.Left.Value != tokens[2] || currentNode.Left.Value != tokens[3]))
-                {
-                    output += "(";
-                    output += currentNode.Left.Value;
-                    output += currentNode.Value;
-                    output += currentNode.Right.Value;
-                    output += ")";
-                    output += ")";
-                    currentNode = currentNode.Parent.Parent; //this could change
-                    Node<char> temp = root;
-                    while (temp != null)
-                    {
-                        if (temp == currentNode)
-                        {
-                            currentNode = null; //breaks the loop and ends the traversal, only occurs if the node being processed is the last operator on the right side
-                        }
-                        temp = temp.Right;
-                    }
-                }
 
-                
-            }
-            return (string)output;
-           
-            /*
-            
-
-            
-
-            //if current node value is a non-op and on left side of a parent
-            //output value to output string
-            //set the currentnode to the parent
-            /*if ((currentNode.Value != tokens[0] || currentNode.Value != tokens[1] || currentNode.Value != tokens[2] || currentNode.Value != tokens[3]) && (currentNode.Parent.Left == currentNode))
-               {
-                   output += currentNode.Value;
-                   currentNode = currentNode.Parent;
-               }*/
-        }
-
-
-
-        public string PostOrder()
+        //if current node value is op, has no operator children, and is to the right of the parent
+        //print its left child, itself, then its right child
+        //TEST TO SEE IF ON THE RIGHT SIDE OF ROOT
+        //use while loop to find current node
+        //if current node equals the iter
+        //set current node to null
+        //otherwise
+        //set the current node to the grandparent (meaning that the parsing process is not over)
+        //use while loop to find current node 
+        /*
+        else if ((currentNode.Value == tokens[0] || currentNode.Value == tokens[1] || currentNode.Value == tokens[2] || currentNode.Value == tokens[3]) && (currentNode.Parent.Right == currentNode)
+        && (currentNode.Right.Value != tokens[0] || currentNode.Right.Value != tokens[1] || currentNode.Right.Value != tokens[2] || currentNode.Right.Value != tokens[3]) &&
+        (currentNode.Left.Value != tokens[0] || currentNode.Left.Value != tokens[1] || currentNode.Left.Value != tokens[2] || currentNode.Left.Value != tokens[3]))
         {
-            return "";
+            output += "(";
+            output += currentNode.Left.Value;
+            output += currentNode.Value;
+            output += currentNode.Right.Value;
+            output += ")";
+            output += ")";
+            currentNode = currentNode.Parent.Parent; //this could change
+            Node<char> temp = root;
+            while (temp != null)
+            {
+                if (temp == currentNode)
+                {
+                    currentNode = null; //breaks the loop and ends the traversal, only occurs if the node being processed is the last operator on the right side
+                }
+                temp = temp.Right;
+            }
         }
+
+
+    }
+    return (string)output;
+        //if current node value is a non-op and on left side of a parent
+        //output value to output string
+        //set the currentnode to the parent
+        /*if ((currentNode.Value != tokens[0] || currentNode.Value != tokens[1] || currentNode.Value != tokens[2] || currentNode.Value != tokens[3]) && (currentNode.Parent.Left == currentNode))
+           {
+               output += currentNode.Value;
+               currentNode = currentNode.Parent;
+           }*/
     }
 }
